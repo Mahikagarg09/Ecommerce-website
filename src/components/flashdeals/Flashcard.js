@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Slider from "react-slick";
-import { useCart } from 'react-use-cart';
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css";
 

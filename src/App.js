@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ThemeButton from "./components/Theme/ThemeButton";
-import { ThemeContext } from "./components/Theme/ThemeContext";
+// import ThemeButton from "./components/Theme/ThemeButton";
+// import { ThemeContext } from "./components/Theme/ThemeContext";
 
 import './App.css';
 import Header from './components/header/Header';
@@ -9,7 +9,6 @@ import Data from './components/Data';
 import Cart from './components/Cart/Cart';
 import Wishlist from './components/wishlist/Wishlist'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { FashionCard } from './components/categories-info/FashionCard';
 
 function App() {
   const { productItems } = Data;
@@ -18,17 +17,17 @@ function App() {
 
 
   //const {darkMode} = useContext(ThemeContext);
-  const [mode,setMode]=React.useState('light');
-  const toggleMode = ()=> {
-    if(mode==='light'){
-      setMode('dark');
-      document.body.style.backgroundColor='#062023';
-    }else{
-      setMode('light');
-      document.body.style.backgroundColor='white';
+  // const [mode,setMode]=React.useState('light');
+  // const toggleMode = ()=> {
+  //   if(mode==='light'){
+  //     setMode('dark');
+  //     document.body.style.backgroundColor='#062023';
+  //   }else{
+  //     setMode('light');
+  //     document.body.style.backgroundColor='white';
 
-    }
-  }
+  //   }
+  // }
 
 
   const [show, setShow] = useState(true);
@@ -51,7 +50,6 @@ function App() {
 
   //-------------ADD TO WISHLIST------------
 
-  // const [showwish, setShowWish] = useState(true);
   const [wish, setWish] = useState([]);
   const handleClickWish = (item) => {
     if (wish.indexOf(item) !== -1) return;
@@ -63,11 +61,11 @@ function App() {
     <>
 
       <Router>
-        <Header setShow={setShow} size={cart.length} mode={mode} toggleMode={toggleMode}  />
+        <Header setShow={setShow} size={cart.length} />
         <Switch>
           {show ?
             <Route path="/" exact>
-              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} mode={mode}/>
+              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish}/>
             </Route>
             :
             // <Route path="/cart">

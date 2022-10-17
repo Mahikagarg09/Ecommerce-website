@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Offerdata from './Offerdata'
 import slider from "../assets/slider.jpg";
 import "slick-carousel/slick/slick.css";

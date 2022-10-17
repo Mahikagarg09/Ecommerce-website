@@ -3,11 +3,11 @@ import "./Header.css";
 import Navbar from './Navbar';
 import Search from './Search';
 
-export default function header({setShow,toggleMode,mode,size}){
+export default function header({setShow,size}){
     return (
         <>
             <Search setShow={setShow} size={size}  />
-            <Navbar toggleMode={toggleMode} mode={mode}/>
+            <Navbar/>
         </>
     )
 }

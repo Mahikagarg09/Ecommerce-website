@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 
-export default function Navbar({toggleMode,mode}) {
+export default function Navbar() {
 
     return (
         <>
@@ -30,9 +30,6 @@ export default function Navbar({toggleMode,mode}) {
                                 </li>
                                 <li className="nav-item">
                                     <Link to="/wishlist" className="nav-link" >My Wishlist</Link>
-                                </li>
-                                <li>
-                                    <button type="button" class="btn btn-success" onClick={() => toggleMode}>Theme</button>
                                 </li>
                                 {/* <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={() => toggleMode}/>
