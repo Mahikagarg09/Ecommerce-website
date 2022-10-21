@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export default function Navbar() {
+export default function Navbar({toggleTheme,theme}) {
 
     return (
         <>
@@ -31,10 +31,22 @@ export default function Navbar() {
                                 <li className="nav-item">
                                     <Link to="/wishlist" className="nav-link" >My Wishlist</Link>
                                 </li>
-                                {/* <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={() => toggleMode}/>
-                                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-                                </div> */}
+                                <li>
+                                <div className='light-mode'>
+                                    <span onClick={toggleTheme}>
+                                        {
+                                            theme==='dark-theme' ?
+                                            ( 
+                                            <span>
+                                                <i className="fa-thin fa-sun"></i>Light
+                                            </span>)
+                                            :(<span>
+                                                <i className="fa-thin fa-moon"></i>Dark
+                                            </span>)
+                                        }
+                                    </span>
+                                </div>
+                                </li>
                             </ul>
 
                         </div>

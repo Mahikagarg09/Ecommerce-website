@@ -1,7 +1,7 @@
 import React from "react"
 import "./style.css"
 
-const Wrapper = () => {
+const Wrapper = ({theme}) => {
     const data = [
         {
             cover: <i class='fa-solid fa-truck-fast'></i>,
@@ -26,7 +26,7 @@ const Wrapper = () => {
     ]
     return (
         <>
-            <section className='wrapper background'>
+            <section className={`wrapper background ${theme}`}>
                 <div className='container grid2'>
                     {data.map((val, index) => {
                         return (

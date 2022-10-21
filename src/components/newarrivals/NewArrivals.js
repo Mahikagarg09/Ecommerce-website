@@ -2,10 +2,10 @@ import React from "react"
 import Cart from "./Cart"
 import "./style.css"
 
-const NewArrivals = () => {
+const NewArrivals = ({theme}) => {
     return (
         <>
-            <section className='NewArrivals background'>
+            <section className={`NewArrivals background ${theme}`}>
                 <div className='container'>
                     <div className='heading d_flex'>
                         <div className='heading-left row  f_flex'>
@@ -14,7 +14,7 @@ const NewArrivals = () => {
                         </div>
                     </div>
 
-                    <Cart />
+                    <Cart theme={theme}/>
                 </div>
             </section>
         </>

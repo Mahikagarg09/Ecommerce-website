@@ -1,6 +1,6 @@
 import React from "react"
 
-const Annocument = () => {
+const Annocument = ({theme}) => {
     const mystyle = {
         width: "30%",
         height: "340px",
@@ -11,7 +11,7 @@ const Annocument = () => {
     }
     return (
         <>
-            <section className='annocument background'>
+            <section className={`annocument background ${theme}`}>
                 <div className='container d_flex'>
                     <div className='img' style={mystyle}>
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDA89OEVceUPZqgXE8QfWcZkcjCiBv9MJSpg&usqp=CAU" width='100%' height='100%' />

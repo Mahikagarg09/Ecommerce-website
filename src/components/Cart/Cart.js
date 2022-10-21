@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css" ;
 
-export default function Cart({ cart, setCart, handleChange }) {
+export default function Cart({ cart, setCart, handleChange ,theme}) {
 
     const [price, setPrice] = useState(0);
 
@@ -22,7 +22,7 @@ export default function Cart({ cart, setCart, handleChange }) {
     });
 
     return (
-        <section className='cart-items'>
+        <section className={`cart-items ${theme}`}>
             <div className='container d_flex'>
                 <div className='cart-details'>
                     <h1>{cart.length===0 ? 'Your Cart is Empty' : 'The Cart'}</h1>

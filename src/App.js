@@ -15,19 +15,14 @@ function App() {
 
   //-----------THEME--------
 
+  const [theme, setTheme] = useState('');
+  const toggleTheme =() =>{
+    theme=== '' ? setTheme('dark-theme') : setTheme('');
+  }
 
-  //const {darkMode} = useContext(ThemeContext);
-  // const [mode,setMode]=React.useState('light');
-  // const toggleMode = ()=> {
-  //   if(mode==='light'){
-  //     setMode('dark');
-  //     document.body.style.backgroundColor='#062023';
-  //   }else{
-  //     setMode('light');
-  //     document.body.style.backgroundColor='white';
-
-  //   }
-  // }
+  useEffect(() =>{
+    document.body.className=theme
+  },[theme]);
 
 
   const [show, setShow] = useState(true);
@@ -61,18 +56,18 @@ function App() {
     <>
 
       <Router>
-        <Header setShow={setShow} size={cart.length} />
+        <Header setShow={setShow} size={cart.length} theme={theme} toggleTheme={toggleTheme}/>
         <Switch>
           {show ?
             <Route path="/" exact>
-              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish}/>
+              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme}/>
             </Route>
             :
             // <Route path="/cart">
-            //   <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
+            //   <Cart cart={cart} setCart={setCart} handleChange={handleChange} theme={theme} />
             // </Route>
             <Route path="/wishlist">
-                <Wishlist wish={wish} setWish={setWish} handleClickCart={handleClickCart}  />
+                <Wishlist wish={wish} setWish={setWish} handleClickCart={handleClickCart}  theme={theme}/>
             </Route>
           }
           {/* {

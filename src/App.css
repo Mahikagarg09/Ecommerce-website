@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
 * {
   padding: 0;
   margin: 0;
@@ -37,8 +39,9 @@ body {
 }
 a {
   text-decoration: none;
-  color: black;
+  color: black
 }
+
 li {
   list-style: none;
 }
@@ -68,10 +71,12 @@ button {
   height: 50px;
   line-height: 50px;
   background: #f3f5f9;
-  margin-left: 10px;
+  margin: 0 10px;
   text-align: center;
   border-radius: 50%;
 }
+
+
 .boxShadow {
   box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
 }
@@ -84,7 +89,6 @@ button {
   width:20%;
   margin-left: 50px;
 }
-
 /*---------category----------*/
 .contentWidth {
   width: 77%;
@@ -99,17 +103,13 @@ button {
   margin-top: 5px;
   margin-bottom: 50px;
 }
-.category img {
-  width: 30px;
-  height: 30px;
-  margin-top: 10px;
-  object-fit: contain;
-}
+
 .category button {
   margin: 10px 20px;
   text-transform: capitalize;
   background:none ;
 }
+
 .category .box {
   transition: 0.5s;
   padding: 0 20px;
@@ -126,6 +126,8 @@ button {
   font-weight: bold;
   color: #fff;
   border-radius: 5px;
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 .top {
   margin-top: 80px;
@@ -166,9 +168,14 @@ button {
 }
 
 .product img{
-  width:260px;
+  width:200px;
   height: 230px;
 }
+.slick-slide{
+  height:80%;
+  width:80%;
+}
+
 .product .rate i {
   font-size: 15px;
   color: #ffcd4e;
@@ -193,11 +200,23 @@ button {
 .price i{
   font-size: 30px;
 }
+
+.dark-theme .price i{
+  background-color: white;
+  border-radius: 5px;
+}
+
 .price button:hover {
   cursor: pointer;
   background-color: #e94560;
   color: #fff;
 }
+
+.dark-theme .price button:hover{
+  color: #1f135c;
+  background-color: #e94560;
+}
+
 .product-like {
   position: absolute;
   top: 0;
@@ -222,9 +241,9 @@ button {
   opacity: 1;
 }
 .box img{
-  height:250px;
-  width: 300px;
-  padding: 20px 0px;;
+  height:200px;
+  width: 250px;
+  padding: 20px 10px;;
 }
 
 /*---------product-----------*/
@@ -274,6 +293,11 @@ button {
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 30px;
 }
+
+.dark-theme .grid{
+  background-color: #170c50;
+}
+
 .grid2 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -281,6 +305,50 @@ button {
 }
 
 .box .product{
-  width:100%;
+  width: 90%;
   height:100%;
 }
+
+.light-mode{
+  color: rgba(255, 255, 255,0.55);
+  font-size: 17px;
+  padding: 5px;
+}
+
+
+/* --------------DARK THEME----------- */
+.dark-theme{
+  background-color: rgb(17, 9, 50);
+  color: #f3f5f9;
+}
+
+.dark-theme a{
+  color: white;
+}
+
+.dark-theme .icon-circle{
+  border: 2px rgba(255, 255, 255,0.55);
+  color: white;
+  background-color: #170c50;
+}
+
+.dark-theme .category{
+  background-color: #170c50;
+}
+
+.dark-theme .category button{
+  color: white;
+}
+
+.dark-theme .product{
+  background-color: #170c50;
+}
+
+.dark-theme .category .box:hover {
+  background-color: #535e97;
+}
+
+.dark-theme .box{
+  background-color: #170c50;
+}
+

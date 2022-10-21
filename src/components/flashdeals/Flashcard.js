@@ -25,7 +25,7 @@ const PrevArrow = (props) => {
     )
 }
 
-export default function Flashcard({productItems,handleClickCart,handleClickWish}) {
+export default function Flashcard({productItems,handleClickCart,handleClickWish,theme}) {
     
     const settings = {
         dots: false,
@@ -41,7 +41,7 @@ export default function Flashcard({productItems,handleClickCart,handleClickWish}
             <Slider {...settings}>
             {productItems.map((item) => {
                 return(
-                <div className='box' key={item.id}>
+                <div className={`box ${theme}`} key={item.id}>
                     <div className="product mtop">
                         <div className="img">
                             <span className="discount">{item.discount}% Off</span>

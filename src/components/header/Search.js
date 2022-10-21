@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
 
-export default function Search({ setShow, size }) {
+export default function Search({ setShow, size ,theme}) {
 
     //------------SEARCH FILTER------------
     const [filter, setFilter] = useState('');
@@ -20,7 +20,7 @@ export default function Search({ setShow, size }) {
 
     return (
         <>
-            <section className="search" >
+            <section className={`search ${theme}`} >
                 <container className="c_flex">
                     <div className="logo">
                         <Link to="/" href="" onClick={() => setShow(true)}><i class="fas fa-shopping-cart"></i> CART PLUS+</Link>
@@ -28,16 +28,17 @@ export default function Search({ setShow, size }) {
 
                     <div className="search-box f_flex">
                         <i className='fa fa-search'></i>
-                        <input type="text" placeholder='Search' value={filter}  />
+                        <input type="text" placeholder='Search'  />
                         <span>All Category</span>
                     </div>
 
                     <div className="icon f_flex width">
+                        <Link to="/user">
                         <i className='fa fa-user icon-circle'></i>
+                        </Link>
                         <div className="cart">
                             <Link to="/wishlist"  onClick={() => setShow(false) }>
                                 <i className="fa-solid fa-heart icon-circle"></i>
-                                <span>0</span>
                             </Link>
                             <Link to="/cart" onClick={() => setShow(false) }>
                                 <i className="fa fa-shopping-bag icon-circle"></i>

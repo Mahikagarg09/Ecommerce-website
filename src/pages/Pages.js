@@ -8,21 +8,21 @@ import Shop from "../components/shops/Shop";
 import Wrapper from "../components/wrapper/Wrapper"
 import Footer from '../components/footer/Footer';
 import Annocument from '../components/announcements/Announcement';
-export default function Pages({productItems,mode,handleClickCart,handleClickWish,shopItems}) {
+export default function Pages({productItems,handleClickCart,handleClickWish,shopItems,theme}) {
 
 
 
   return (
 
     <>
-        <Home  mode={mode}/>
-        <FlashDeals productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish}/>
+        <Home theme={theme}/>
+        <FlashDeals productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme}/>
         {/* <Categories/> */}
-        <NewArrivals mode={mode}/> 
-        <Discount/>
+        <NewArrivals theme={theme}/> 
+        <Discount theme={theme}/>
         {/* <Shop shopItems={shopItems} handleClick={handleClick}/> */}
-        <Annocument/>
-        <Wrapper/>
+        <Annocument theme={theme}/>
+        <Wrapper theme={theme}/>
         <Footer/>
     </>
   )

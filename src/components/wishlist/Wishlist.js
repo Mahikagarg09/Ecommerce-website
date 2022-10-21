@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Wishlist({ wish, setWish,handleClickCart}) {
+export default function Wishlist({ wish, setWish,handleClickCart,theme}) {
 
     const handleRemove = (id) => {
         const arr = wish.filter((item) => item.id !== id);
@@ -10,7 +10,7 @@ export default function Wishlist({ wish, setWish,handleClickCart}) {
     return (
         <>
 
-            <section className='cart-items'>
+            <section className={`cart-items ${theme}`}>
                 <div className='container d_flex'>
                     <div className='cart-details'>
                         <h1>{wish.length === 0 ? 'Your Wishlist is Empty' : 'The Wishlist'}</h1>

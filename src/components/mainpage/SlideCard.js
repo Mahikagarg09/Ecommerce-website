@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 
-export default function SlideCard() {
+export default function SlideCard({theme}) {
 
   
 
@@ -27,7 +27,7 @@ export default function SlideCard() {
     <Slider {...settings}>
     {Offerdata.map((value,index) =>{
       return(
-        <div className="box d_flex top">
+        <div className={`box d_flex top ${theme}`}>
           <div className="left">
             <h1>{value.title}</h1>
             <p>{value.desc}</p>
