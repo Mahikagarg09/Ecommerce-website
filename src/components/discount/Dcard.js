@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css"
 import Ddata from "./Ddata"
 import "../newarrivals/style.css"
 
-const Dcard = ({theme}) => {
+const Dcard = ({ theme }) => {
     const settings = {
         dots: false,
         infinite: true,
@@ -19,12 +19,12 @@ const Dcard = ({theme}) => {
                 {Ddata.map((value, index) => {
                     return (
                         <>
-                            <div className={`box product slick-slide ${theme}`} key={index}>
-                                <div className='img'>
-                                    <img src={value.cover} alt='' />
-                                </div>
-                                <h4>{value.name}</h4>
-                                <span>{value.price}</span>
+                            <div className={`card ${theme}`} key={index}>
+                                <img src={value.cover} className="card-img-top" alt="..."/>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{value.name}</h5>
+                                        <p className="card-text">{value.price}</p>
+                                    </div>
                             </div>
                         </>
                     )
