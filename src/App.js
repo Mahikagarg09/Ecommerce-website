@@ -24,8 +24,9 @@ function App() {
     document.body.className=theme
   },[theme]);
 
-
-  const [show, setShow] = useState(true);
+  const pages={homepage:"homepage",wishlist:"wishlist",cart:"cart"};
+  const[show,setShow]=useState(true);
+  // const [show, setShow] = useState<String>(pages.homepage);
   // --------------ADD TO CART----------
 
   const [cart, setCart] = useState([]);
@@ -70,20 +71,9 @@ function App() {
                 <Wishlist wish={wish} setWish={setWish} handleClickCart={handleClickCart}  theme={theme}/>
             </Route>
           }
-          {/* {
-            show?
-              <Route path="/" exact>
-                <Pages productItems={productItems} handleClickWish={handleClickWish} />
-              </Route>
-              :
-              <Route path="/wishlist">
-                <Wishlist wish={wish} setWish={setWish} handleClick={handleClick}  />
-              </Route>
-          } */}
         </Switch>
       </Router>
     </>
   );
 }
-
 export default App;
