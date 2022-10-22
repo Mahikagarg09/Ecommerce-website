@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import ThemeButton from "./components/Theme/ThemeButton";
-// import { ThemeContext } from "./components/Theme/ThemeContext";
 
 import './App.css';
 import Header from './components/header/Header';
@@ -23,10 +21,12 @@ function App() {
   useEffect(() => {
     document.body.className = theme
   }, [theme]);
-
-  //const pages={homepage:"homepage",wishlist:"wishlist",cart:"cart"};
+  
   const [show, setShow] = useState(1);
-  //const [show, setShow] = useState<String>(pages.homepage);
+  // 1-homepage
+  // 2-Wishlist
+  // 3-cart
+
   // --------------ADD TO CART----------
 
   const [cart, setCart] = useState([]);
