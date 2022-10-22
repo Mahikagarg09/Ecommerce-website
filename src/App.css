@@ -171,10 +171,6 @@ button {
   width:200px;
   height: 230px;
 }
-.slick-slide{
-  height:80%;
-  width:80%;
-}
 
 .product .rate i {
   font-size: 15px;
@@ -315,6 +311,16 @@ button {
   padding: 5px;
 }
 
+.card{
+  background-color:rgb(249, 243, 243);
+}
+
+.slick-slide img{
+  height: 200px;
+  width: 180px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
 
 /* --------------DARK THEME----------- */
 .dark-theme{
@@ -342,6 +348,7 @@ button {
 
 .dark-theme .product{
   background-color: #170c50;
+  margin: 10px;
 }
 
 .dark-theme .category .box:hover {
@@ -352,3 +359,6 @@ button {
   background-color: #170c50;
 }
 
+.dark-theme .card{
+  background-color:#170c50 ;
+}
