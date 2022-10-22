@@ -23,7 +23,7 @@ export default function Search({ setShow, size ,theme}) {
             <section className={`search ${theme}`} >
                 <container className="c_flex">
                     <div className="logo">
-                        <Link to="/" href="" onClick={() => setShow(true)}><i class="fas fa-shopping-cart"></i> CART PLUS+</Link>
+                        <Link to="/" href="" onClick={() => setShow(1)}><i class="fas fa-shopping-cart"></i> CART PLUS+</Link>
                     </div>
 
                     <div className="search-box f_flex">
@@ -37,10 +37,10 @@ export default function Search({ setShow, size ,theme}) {
                         <i className='fa fa-user icon-circle'></i>
                         </Link>
                         <div className="cart">
-                            <Link to="/wishlist"  onClick={() => setShow(false) }>
+                            <Link to="/wishlist"  onClick={() => setShow(2) }>
                                 <i className="fa-solid fa-heart icon-circle"></i>
                             </Link>
-                            <Link to="/cart" onClick={() => setShow(false) }>
+                            <Link to="/cart" onClick={() => setShow(3) }>
                                 <i className="fa fa-shopping-bag icon-circle"></i>
                                 <span>{size}</span>
                             </Link>

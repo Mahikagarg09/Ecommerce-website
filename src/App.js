@@ -16,17 +16,17 @@ function App() {
   //-----------THEME--------
 
   const [theme, setTheme] = useState('');
-  const toggleTheme =(theme) =>{
+  const toggleTheme = (theme) => {
     setTheme(theme);
   }
 
-  useEffect(() =>{
-    document.body.className=theme
-  },[theme]);
+  useEffect(() => {
+    document.body.className = theme
+  }, [theme]);
 
-  const pages={homepage:"homepage",wishlist:"wishlist",cart:"cart"};
-  const[show,setShow]=useState(true);
-  // const [show, setShow] = useState<String>(pages.homepage);
+  //const pages={homepage:"homepage",wishlist:"wishlist",cart:"cart"};
+  const [show, setShow] = useState(1);
+  //const [show, setShow] = useState<String>(pages.homepage);
   // --------------ADD TO CART----------
 
   const [cart, setCart] = useState([]);
@@ -57,23 +57,28 @@ function App() {
     <>
 
       <Router>
-        <Header setShow={setShow} size={cart.length} theme={theme} toggleTheme={toggleTheme}/>
+        <Header setShow={setShow} size={cart.length} theme={theme} toggleTheme={toggleTheme} />
         <Switch>
-          {show ?
+          if(show ===1){
             <Route path="/" exact>
-              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme}/>
+              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme} />
             </Route>
-            :
-            // <Route path="/cart">
-            //   <Cart cart={cart} setCart={setCart} handleChange={handleChange} theme={theme} />
-            // </Route>
+          }else if(show===2){
             <Route path="/wishlist">
-                <Wishlist wish={wish} setWish={setWish} handleClickCart={handleClickCart}  theme={theme}/>
+              <Wishlist wish={wish} setWish={setWish} handleClickCart={handleClickCart} theme={theme} />
+            </Route>
+          }else{
+            <Route path="/cart">
+              <Cart cart={cart} setCart={setCart} handleChange={handleChange} theme={theme} />
             </Route>
           }
+        
+          
         </Switch>
       </Router>
     </>
   );
 }
+
 export default App;
+
