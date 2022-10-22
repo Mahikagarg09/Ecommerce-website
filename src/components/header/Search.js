@@ -1,22 +1,8 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
-import logo from "../assets/logo.png";
 
 export default function Search({ setShow, size ,theme}) {
 
-    //------------SEARCH FILTER------------
-    const [filter, setFilter] = useState('');
-    // const searchText = (event) => {
-    //     setFilter(event.target.value);
-    // }
-    // console.warn(filter);
-
-    // let dataSearch=data.cardData.filter(item =>{
-    //     return Object.keys(item).some(key =>
-    //         item[key].toString.toLowerCase().includes(filter.toString.toLowerCase())
-    //         )
-
-    // })
 
     return (
         <>
