@@ -322,6 +322,9 @@ button {
   margin-top: 20px;
 }
 
+.dropdown-item{
+  cursor: pointer;
+}
 /* --------------DARK THEME----------- */
 .dark-theme{
   background-color: rgb(17, 9, 50);

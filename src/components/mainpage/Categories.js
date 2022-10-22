@@ -1,5 +1,4 @@
 import React from 'react'
-import Fashion from '../categories-info/Fashion'
 export default function Categories() {
 
     const data=[

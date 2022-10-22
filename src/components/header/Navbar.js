@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export default function Navbar({toggleTheme,theme}) {
+export default function Navbar({ toggleTheme, theme }) {
 
     return (
         <>
@@ -31,21 +31,15 @@ export default function Navbar({toggleTheme,theme}) {
                                 <li className="nav-item">
                                     <Link to="/wishlist" className="nav-link" >My Wishlist</Link>
                                 </li>
-                                <li>
-                                <div className='light-mode'>
-                                    <span onClick={toggleTheme}>
-                                        {
-                                            theme==='dark-theme' ?
-                                            ( 
-                                            <span>
-                                                <i className="fa-thin fa-sun"></i>Light
-                                            </span>)
-                                            :(<span>
-                                                <i className="fa-thin fa-moon"></i>Dark
-                                            </span>)
-                                        }
-                                    </span>
-                                </div>
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Dropdown
+                                    </a>
+                                    <ul className="dropdown-menu">
+                                        <li className="dropdown-item" onClick={() => toggleTheme('')}>Light</li>
+                                        <li className="dropdown-item" onClick={() => toggleTheme('dark-theme')}>Dark</li>
+                                        <li className="dropdown-item" onClick={() => toggleTheme('contrats-theme')}>Contrast</li>
+                                    </ul>
                                 </li>
                             </ul>
 
