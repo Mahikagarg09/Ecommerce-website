@@ -33,12 +33,12 @@ export default function Navbar({ toggleTheme, theme }) {
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Dropdown
+                                        Themes
                                     </a>
                                     <ul className="dropdown-menu">
                                         <li className="dropdown-item" onClick={() => toggleTheme('')}>Light</li>
                                         <li className="dropdown-item" onClick={() => toggleTheme('dark-theme')}>Dark</li>
-                                        <li className="dropdown-item" onClick={() => toggleTheme('contrats-theme')}>Contrast</li>
+                                        <li className="dropdown-item" onClick={() => toggleTheme('contrast-theme')}>Contrast</li>
                                     </ul>
                                 </li>
                             </ul>

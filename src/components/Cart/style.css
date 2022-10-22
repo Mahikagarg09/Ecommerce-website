@@ -4,10 +4,6 @@
   padding: 50px 0;
 }
 
-.dark-theme{
-  background-color:  rgb(17, 9, 50);
-}
-
 .cart-items .cart-details {
   width: 70%;
 }
@@ -114,4 +110,14 @@
   font-size: 18px;
   margin-top: 30px;
   height: 130px;
+}
+
+/* ------------THEMES--------- */
+
+.dark-theme{
+  background-color:  rgb(17, 9, 50);
+}
+
+.contrast-theme{
+  background-color: black;
 }

@@ -41,7 +41,7 @@ export default function Flashcard({productItems,handleClickCart,handleClickWish,
             <Slider {...settings}>
             {productItems.map((item) => {
                 return(
-                <div className={`box ${theme}`} key={item.id}>
+                <div className={` ${theme}`} key={item.id}>
                     <div className="product mtop">
                         <div className="img">
                             <span className="discount">{item.discount}% Off</span>
