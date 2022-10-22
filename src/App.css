@@ -197,10 +197,7 @@ button {
   font-size: 30px;
 }
 
-.dark-theme .price i{
-  background-color: white;
-  border-radius: 5px;
-}
+
 
 .price button:hover {
   cursor: pointer;
@@ -208,10 +205,7 @@ button {
   color: #fff;
 }
 
-.dark-theme .price button:hover{
-  color: #1f135c;
-  background-color: #e94560;
-}
+
 
 .product-like {
   position: absolute;
@@ -232,6 +226,10 @@ button {
   font-size: 25px;
   margin: 5px 3px;
   cursor: pointer;
+}
+
+.product-like i:hover{
+  color: #e94560;
 }
 .product:hover .product-like {
   opacity: 1;
@@ -290,9 +288,7 @@ button {
   grid-gap: 30px;
 }
 
-.dark-theme .grid{
-  background-color: #170c50;
-}
+
 
 .grid2 {
   display: grid;
@@ -364,6 +360,20 @@ button {
 
 .dark-theme .card{
   background-color:#170c50 ;
+}
+
+.dark-theme .price i{
+  background-color: white;
+  border-radius: 5px;
+}
+
+.dark-theme .price button:hover{
+  color: #1f135c;
+  background-color: #e94560;
+}
+
+.dark-theme .grid{
+  background-color: #170c50;
 }
 
 /* -----------CONTRAST THEME--------- */

@@ -6,7 +6,7 @@ import Discount from "../components/discount/Discount";
 import Wrapper from "../components/wrapper/Wrapper"
 import Footer from '../components/footer/Footer';
 import Annocument from '../components/announcements/Announcement';
-export default function Pages({productItems,handleClickCart,handleClickWish,shopItems,theme}) {
+export default function Pages({productItems,handleClickCart,handleClickWish,theme}) {
 
 
 
