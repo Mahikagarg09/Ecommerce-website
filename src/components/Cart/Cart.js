@@ -26,7 +26,6 @@ export default function Cart({ cart, setCart, handleChange ,theme}) {
             <div className='container d_flex'>
                 <div className='cart-details'>
                     <h1>{cart.length===0 ? 'Your Cart is Empty' : 'The Cart'}</h1>
-
                     {cart.map((item) => {
                         return (
                             <div className='cart-list product d_flex' key={item.id}>

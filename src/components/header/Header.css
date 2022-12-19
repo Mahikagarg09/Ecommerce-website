@@ -109,31 +109,31 @@
     transition: 0.5s;
 }
 
-/* ----------DARK-THEME---------- */
+/* ----------CONTRAST-THEME---------- */
 
-.dark-theme .search-box{
+.contrast-theme .search-box{
     border:2px solid rgba(241, 234, 234, 0.1);
 }
 
-.dark-theme .search-box span{
+.contrast-theme .search-box span{
     background-color: #1b59a5;
 }
 
-.dark-theme .search-box i{
+.contrast-theme .search-box i{
     background-color: #1b59a5;
 }
 
-.dark-theme .search-box input{
+.contrast-theme .search-box input{
     background-color: rgb(5, 5, 4);
     color:rgb(113, 82, 82);
 }
 
-/*---------CONTRAST-THEME------------*/
+/*---------DARK-THEME------------*/
 
-.contrast-theme .search-box i{
+.dark-theme .search-box i{
     background-color:#4b545d;
 }
 
-.contrast-theme .search-box span{
+.dark-theme .search-box span{
     background-color: #4b545d;
 }

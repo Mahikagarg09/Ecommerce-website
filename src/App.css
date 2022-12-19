@@ -321,108 +321,108 @@ button {
 .dropdown-item{
   cursor: pointer;
 }
-/* --------------DARK THEME----------- */
-.dark-theme{
+/* --------------CONTRAST THEME----------- */
+.contrast-theme{
   background-color: rgb(17, 9, 50);
   color: #f3f5f9;
 }
 
-.dark-theme a{
+.contrast-theme a{
   color: white;
 }
 
-.dark-theme .icon-circle{
+.contrast-theme .icon-circle{
   border: 2px rgba(255, 255, 255,0.55);
   color: white;
   background-color: #170c50;
 }
 
-.dark-theme .category{
+.contrast-theme .category{
   background-color: #170c50;
 }
 
-.dark-theme .category button{
+.contrast-theme .category button{
   color: white;
 }
 
-.dark-theme .product{
+.contrast-theme .product{
   background-color: #170c50;
   margin: 10px;
 }
 
-.dark-theme .category .box:hover {
+.contrast-theme .category .box:hover {
   background-color: #535e97;
 }
 
-.dark-theme .box{
+.contrast-theme .box{
   background-color: #170c50;
 }
 
-.dark-theme .card{
+.contrast-theme .card{
   background-color:#170c50 ;
 }
 
-.dark-theme .price i{
+.contrast-theme .price i{
   background-color: white;
   border-radius: 5px;
 }
 
-.dark-theme .price button:hover{
+.contrast-theme .price button:hover{
   color: #1f135c;
   background-color: #e94560;
 }
 
-.dark-theme .grid{
+.contrast-theme .grid{
   background-color: #170c50;
 }
 
-/* -----------CONTRAST THEME--------- */
+/* -----------DARK THEME--------- */
 
-.contrast-theme{
+.dark-theme{
   background-color:black;
   color: white;
 }
 
-.contrast-theme a{
+.dark-theme a{
   color: rgb(233, 218, 218);
 }
 
-.contrast-theme .icon-circle{
+.dark-theme .icon-circle{
   border: 2px rgba(255, 255, 255,0.55);
   color: black;
   background-color: #d5d2e3;
 }
 
-.contrast-theme .category{
+.dark-theme .category{
   background-color: #212529;
 }
 
-.contrast-theme .category button{
+.dark-theme .category button{
   color:white;
 }
 
-.contrast-theme .category .box:hover {
+.dark-theme .category .box:hover {
   background-color:black;
 }
 
-.contrast-theme .product{
+.dark-theme .product{
   background-color:#212529;
   margin: 10px;
 }
 
-.contrast-theme .box{
+.dark-theme .box{
   background-color: #212529;
 }
 
-.contrast-theme .card{
+.dark-theme .card{
   background-color:#212529
 }
 
-.contrast-theme footer{
+.dark-theme footer{
   background-color: #212529;
 }
 
-.contrast-theme .price i{
+.dark-theme .price i{
   background-color: rgba(255, 255, 255, 0.697);
   color: black;
 }
