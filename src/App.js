@@ -6,6 +6,7 @@ import Pages from './pages/Pages';
 import Data from './components/Data';
 import Cart from './components/Cart/Cart';
 import Wishlist from './components/wishlist/Wishlist'
+import Alert  from './pages/Alert';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
   useEffect(() => {
     document.body.className = theme
   }, [theme]);
-  
+
   const [show, setShow] = useState(1);
   // 1-homepage
   // 2-Wishlist
@@ -30,9 +31,14 @@ function App() {
   // --------------ADD TO CART----------
 
   const [cart, setCart] = useState([]);
-  const handleClickCart = (item) => {
-    if (cart.indexOf(item) !== -1) return;
-    setCart([...cart, item]);
+  const handleClickCart = (item,d) => {
+    if (cart.indexOf(item) !== -1){
+      const ind = cart.indexOf(item);
+    cart[ind].amount += d;
+    }else{
+      setCart([...cart, item]);
+      showAlert("This item has been added to cart")
+    }
   };
 
   const handleChange = (item, d) => {
@@ -45,23 +51,41 @@ function App() {
   };
 
   //-------------ADD TO WISHLIST------------
-
   const [wish, setWish] = useState([]);
   const handleClickWish = (item) => {
-    if (wish.indexOf(item) !== -1) return;
-    setWish([...wish, item]);
-    console.log(wish);
+    if (wish.indexOf(item) !== -1) {
+      wish.splice(wish.indexOf(item),1);
+      showAlert("This item has been removed from wishlist");
+
+    } else {
+      setWish([...wish, item]);
+      showAlert("This item has been wishlisted");
+    }
+
   };
+
+  // ---------------ALERT MESSAGE------
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message) =>{
+    setAlert({
+      msg: message,
+    })
+    setTimeout(() => {
+      setAlert(null);
+    },1500);
+  }
 
   return (
     <>
 
       <Router>
         <Header setShow={setShow} size={cart.length} theme={theme} toggleTheme={toggleTheme} />
+        <Alert alert={alert}/>
         <Switch>
           if(show ===1){
             <Route path="/" exact>
-              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme} />
+              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme}/>
             </Route>
           }else if(show===2){
             <Route path="/wishlist">
@@ -72,8 +96,8 @@ function App() {
               <Cart cart={cart} setCart={setCart} handleChange={handleChange} theme={theme} />
             </Route>
           }
-        
-          
+
+
         </Switch>
       </Router>
     </>

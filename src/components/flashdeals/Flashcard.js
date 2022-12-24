@@ -25,8 +25,8 @@ const PrevArrow = (props) => {
     )
 }
 
-export default function Flashcard({productItems,handleClickCart,handleClickWish,theme}) {
-    
+export default function Flashcard({ productItems, handleClickCart, handleClickWish, theme}) {
+
     const settings = {
         dots: false,
         infinite: true,
@@ -62,7 +62,7 @@ export default function Flashcard({productItems,handleClickCart,handleClickWish,
                             
                             <div className="price">
                                 <h4>${item.price}.00</h4>
-                                <button onClick={() => handleClickCart(item)}>
+                                <button onClick={() => handleClickCart(item,1)}>
                                     <i className="fa fa-plus"></i>
                                 </button>
                             </div>
@@ -70,7 +70,7 @@ export default function Flashcard({productItems,handleClickCart,handleClickWish,
                     </div>
                 </div>
                 )
-            })} 
+                })}
             </Slider>
         </>
     )
