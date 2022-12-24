@@ -212,7 +212,7 @@ button {
   top: 0;
   right: 0;
   margin: 10px;
-  opacity: 0;
+  /* opacity: 0; */
   transition: 0.5s;
 }
 .product-like label {
@@ -226,14 +226,15 @@ button {
   font-size: 25px;
   margin: 5px 3px;
   cursor: pointer;
+  color:#e94560
 }
 
-.product-like i:hover{
+/* .product-like i:hover{
   color: #e94560;
-}
-.product:hover .product-like {
+} */
+/* .product:hover .product-like {
   opacity: 1;
-}
+} */
 .box img{
   height:200px;
   width: 250px;
@@ -425,4 +426,16 @@ button {
 .dark-theme .price i{
   background-color: rgba(255, 255, 255, 0.697);
   color: black;
+}
+
+/* ---------ALERT MESSAGE-------- */
+.alert{
+  bottom:0;
+  position:bottom center;
+  z-index: 9;
+  width: 100%;
+  text-align: center;
+  background-color: #e94560;
+  color: white;
+  font-weight: 600;
 }
