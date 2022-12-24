@@ -9,7 +9,7 @@ export default function Search({ setShow, size ,theme}) {
             <section className={`search ${theme}`} >
                 <container className="c_flex">
                     <div className="logo">
-                        <Link to="/" href="" onClick={() => setShow(1)}><i class="fas fa-shopping-cart"></i> CART PLUS+</Link>
+                        <Link to="/" href="" onClick={() => setShow(1)}><i className="fas fa-shopping-cart"></i> CART PLUS+</Link>
                     </div>
 
                     <div className="search-box f_flex">

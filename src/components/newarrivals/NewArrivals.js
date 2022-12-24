@@ -9,7 +9,7 @@ const NewArrivals = ({theme}) => {
                 <div className='container'>
                     <div className='heading d_flex'>
                         <div className='heading-left row  f_flex'>
-                            <i class="fa-solid fa-truck-fast"></i>
+                            <i className="fa-solid fa-truck-fast"></i>
                             <h1>New Arrivals </h1>
                         </div>
                     </div>
