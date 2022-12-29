@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-
 import './App.css';
 import Header from './components/header/Header';
 import Pages from './pages/Pages';
 import Data from './components/Data';
 import Cart from './components/Cart/Cart';
 import Wishlist from './components/wishlist/Wishlist'
-import Alert  from './pages/Alert';
+import Alert from './pages/Alert';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -40,49 +39,58 @@ function App() {
   // --------------ADD TO CART----------
 
   const [cart, setCart] = useState([]);
-  const handleClickCart = (item,d) => {
-    if (cart.indexOf(item) !== -1){
-      const ind = cart.indexOf(item);
-    cart[ind].amount += d;
-    }else{
-      setCart([...cart, item]);
+  const handleClickCart = (item, d) => {
+    const existingItem = cart.find(i => i.id === item.id);
+    if (existingItem) {
+      existingItem.amount += d;
+      setCart([...cart]);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    } else {
+      const updatedItems = [...cart, item];
+      setCart(updatedItems);
+      localStorage.setItem('cart', JSON.stringify(updatedItems));
       showAlert("This item has been added to cart")
     }
   };
 
-  const handleChange = (item, d) => {
-    const ind = cart.indexOf(item);
-    const arr = cart;
-    arr[ind].amount += d;
+  useEffect(() => {
+    const storedCartItems = localStorage.getItem('cart');
+    setCart(storedCartItems ? JSON.parse(storedCartItems) : []);
+  }, []);
 
-    if (arr[ind].amount === 0) arr[ind].amount = 1;
-    setCart([...arr]);
-  };
 
   //-------------ADD TO WISHLIST------------
   const [wish, setWish] = useState([]);
   const handleClickWish = (item) => {
-    if (wish.indexOf(item) !== -1) {
-      wish.splice(wish.indexOf(item),1);
-      showAlert("This item has been removed from wishlist");
-
+    const existingItem = wish.find(i => i.id === item.id);
+    if (existingItem) {
+      const updatedWish = wish.filter(i => i.id !== item.id);
+      setWish(updatedWish);
+      localStorage.setItem('wish', JSON.stringify(updatedWish));
+      showAlert("This item has been removed from wishlist")
     } else {
-      setWish([...wish, item]);
-      showAlert("This item has been wishlisted");
+      const updatedItems = [...wish, item];
+      setWish(updatedItems);
+      localStorage.setItem('wish', JSON.stringify(updatedItems));
+      showAlert("This item has been added to wishlist")
     }
-
   };
+
+  useEffect(() => {
+    const storedWishItems = localStorage.getItem('wish');
+    setWish(storedWishItems ? JSON.parse(storedWishItems) : []);
+  }, []);
 
   // ---------------ALERT MESSAGE------
   const [alert, setAlert] = useState(null);
 
-  const showAlert = (message) =>{
+  const showAlert = (message) => {
     setAlert({
       msg: message,
     })
     setTimeout(() => {
       setAlert(null);
-    },1500);
+    }, 1500);
   }
 
   return (
@@ -90,11 +98,11 @@ function App() {
 
       <Router>
         <Header setShow={setShow} size={cart.length} theme={theme} toggleTheme={toggleTheme} />
-        <Alert alert={alert}/>
+        <Alert alert={alert} />
         <Switch>
           if(show ===1){
             <Route path="/" exact>
-              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme}/>
+              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme} />
             </Route>
           }else if(show===2){
             <Route path="/wishlist">
@@ -102,7 +110,7 @@ function App() {
             </Route>
           }else{
             <Route path="/cart">
-              <Cart cart={cart} setCart={setCart} handleChange={handleChange} theme={theme} />
+              <Cart cart={cart} setCart={setCart} handleClickCart={handleClickCart} theme={theme} />
             </Route>
           }
 

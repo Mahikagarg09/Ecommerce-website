@@ -3,8 +3,9 @@ import React from 'react'
 export default function Wishlist({ wish, setWish,handleClickCart,theme}) {
 
     const handleRemove = (id) => {
-        const arr = wish.filter((item) => item.id !== id);
-        setWish(arr);
+        const updatedWish = wish.filter(item => item.id !== id);
+        setWish(updatedWish);
+        localStorage.setItem('wish', JSON.stringify(updatedWish));
     };
 
     return (
@@ -35,7 +36,7 @@ export default function Wishlist({ wish, setWish,handleClickCart,theme}) {
                                             </button>
                                         </div>
                                         <div className='cartControl d_flex'>
-                                            <button className='incCart'onClick={() => handleClickCart(item)}>
+                                            <button className='incCart'onClick={() => handleClickCart(item,1)}>
                                                 <i className='fa-solid fa-plus'></i>
                                             </button>
                                         </div>
