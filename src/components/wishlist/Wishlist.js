@@ -3,8 +3,9 @@ import React from 'react'
 export default function Wishlist({ wish, setWish,handleClickCart,theme}) {
 
     const handleRemove = (id) => {
-        const arr = wish.filter((item) => item.id !== id);
-        setWish(arr);
+        const updatedWish = wish.filter(item => item.id !== id);
+        setWish(updatedWish);
+        localStorage.setItem('wish', JSON.stringify(updatedWish));
     };
 
     return (
