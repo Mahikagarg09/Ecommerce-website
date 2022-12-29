@@ -17,11 +17,20 @@ function App() {
   const [theme, setTheme] = useState('');
   const toggleTheme = (theme) => {
     setTheme(theme);
+    localStorage.setItem('theme', theme);
   }
-
   useEffect(() => {
-    document.body.className = theme
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+  
+  useEffect(() => {
+    document.body.className = theme;
   }, [theme]);
+
+  // ----------------PAGES SHOWN--------------------
 
   const [show, setShow] = useState(1);
   // 1-homepage
