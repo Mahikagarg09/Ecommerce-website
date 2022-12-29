@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import "./style.css" ;
+import "./style.css";
 
-export default function Cart({ cart, setCart, handleChange ,theme}) {
+export default function Cart({ cart, setCart, handleClickCart, theme }) {
 
     const [price, setPrice] = useState(0);
 
     const handleRemove = (id) => {
-        const arr = cart.filter((item) => item.id !== id);
-        setCart(arr);
+        // const arr = cart.filter((item) => item.id !== id);
+        // setCart(arr);
+        const updatedCart = cart.filter(item => item.id !== id);
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
         handlePrice();
     };
 
@@ -25,7 +28,7 @@ export default function Cart({ cart, setCart, handleChange ,theme}) {
         <section className={`cart-items ${theme}`}>
             <div className='container d_flex'>
                 <div className='cart-details'>
-                    <h1>{cart.length===0 ? 'Your Cart is Empty' : 'The Cart'}</h1>
+                    <h1>{cart.length === 0 ? 'Your Cart is Empty' : 'The Cart'}</h1>
                     {cart.map((item) => {
                         return (
                             <div className='cart-list product d_flex' key={item.id}>
@@ -49,10 +52,10 @@ export default function Cart({ cart, setCart, handleChange ,theme}) {
                                         </button>
                                     </div>
                                     <div className='cartControl d_flex'>
-                                        <button className='incCart' onClick={() => handleChange(item, 1)}>
+                                        <button className='incCart' onClick={() => handleClickCart(item, 1)}>
                                             <i className='fa-solid fa-plus'></i>
                                         </button>
-                                        <button className='desCart'  onClick={() => handleChange(item, -1)}>
+                                        <button className='desCart' onClick={() => handleClickCart(item, -1)}>
                                             <i className='fa-solid fa-minus'></i>
                                         </button>
                                     </div>
