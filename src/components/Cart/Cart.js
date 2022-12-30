@@ -6,8 +6,6 @@ export default function Cart({ cart, setCart, handleClickCart, theme }) {
     const [price, setPrice] = useState(0);
 
     const handleRemove = (id) => {
-        // const arr = cart.filter((item) => item.id !== id);
-        // setCart(arr);
         const updatedCart = cart.filter(item => item.id !== id);
         setCart(updatedCart);
         localStorage.setItem('cart', JSON.stringify(updatedCart));
