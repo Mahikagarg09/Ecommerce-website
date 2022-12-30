@@ -27,14 +27,14 @@ export default function SlideCard({theme}) {
     <Slider {...settings}>
     {Offerdata.map((value,index) =>{
       return(
-        <div className={`box d_flex top ${theme}`}>
+        <div className={`box d_flex top ${theme}`} key={index}>
           <div className="left">
             <h1>{value.title}</h1>
             <p>{value.desc}</p>
             <button className='btn-primary'>Visit Collections</button>
           </div>
           <div className="right">
-            <img src={slider}/>
+            <img src={slider} alt=""/>
           </div>
         </div>
       )

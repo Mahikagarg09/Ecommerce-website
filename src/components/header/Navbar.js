@@ -32,7 +32,7 @@ export default function Navbar({ toggleTheme}) {
                                     <Link to="/wishlist" className="nav-link" >My Wishlist</Link>
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a  className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Themes
                                     </a>
                                     <ul className="dropdown-menu">
