@@ -100,11 +100,11 @@ function App() {
         <Header setShow={setShow} size={cart.length} theme={theme} toggleTheme={toggleTheme} />
         <Alert alert={alert} />
         <Switch>
-          if(show ===1){
+          if({show} ===1){
             <Route path="/" exact>
-              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme} />
+              <Pages productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme} wish={wish} />
             </Route>
-          }else if(show===2){
+          }else if({show}==2){
             <Route path="/wishlist">
               <Wishlist wish={wish} setWish={setWish} handleClickCart={handleClickCart} theme={theme} />
             </Route>

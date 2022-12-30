@@ -6,7 +6,7 @@ import Discount from "../components/discount/Discount";
 import Wrapper from "../components/wrapper/Wrapper"
 import Footer from '../components/footer/Footer';
 import Annocument from '../components/announcements/Announcement';
-export default function Pages({productItems,handleClickCart,handleClickWish,theme}) {
+export default function Pages({productItems,handleClickCart,handleClickWish,theme,wish}) {
 
 
 
@@ -14,7 +14,7 @@ export default function Pages({productItems,handleClickCart,handleClickWish,them
 
     <>
         <Home theme={theme}/>
-        <FlashDeals productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme}/>
+        <FlashDeals productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme} wish={wish}/>
         <NewArrivals theme={theme}/> 
         <Discount theme={theme}/>
         <Annocument theme={theme}/>

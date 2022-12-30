@@ -1,8 +1,8 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Flashcard from './Flashcard';
 
 
-export default function FlashDeals({ productItems ,handleClickCart,handleClickWish,theme}) {
+export default function FlashDeals({ productItems ,handleClickCart,handleClickWish,theme,wish}) {
 
 
     return (
@@ -13,7 +13,7 @@ export default function FlashDeals({ productItems ,handleClickCart,handleClickWi
                         <i className='fa fa-bolt'></i>
                         <h1>Flash Deals</h1>
                     </div>
-                    <Flashcard productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme} />
+                    <Flashcard productItems={productItems} handleClickCart={handleClickCart} handleClickWish={handleClickWish} theme={theme} wish={wish}/>
                 </div>
             </section>
         </>

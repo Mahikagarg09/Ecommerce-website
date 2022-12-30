@@ -25,7 +25,7 @@ const PrevArrow = (props) => {
     )
 }
 
-export default function Flashcard({ productItems, handleClickCart, handleClickWish, theme}) {
+export default function Flashcard({ productItems, handleClickCart, handleClickWish, theme,wish}) {
 
     const settings = {
         dots: false,
@@ -47,7 +47,7 @@ export default function Flashcard({ productItems, handleClickCart, handleClickWi
                             <span className="discount">{item.discount}% Off</span>
                             <img src={item.cover} alt='' />
                             <div className="product-like">
-                                <buton><i className="fa-regular fa-heart" onClick={() => handleClickWish(item)}></i></buton>
+                                <buton> < i className={`fa-${wish.find(i => i.id === item.id) ? "solid" : "regular"} fa-heart`} onClick={() => handleClickWish(item)}></i></buton>
                             </div>
                         </div>
                         <div className="product-details">
